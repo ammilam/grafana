@@ -4,7 +4,7 @@ FROM dockerhub.artifactory.davita.com/grafana/grafana
 
 USER root
 
-ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
+ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="true"
 
 ENV GF_PATHS_PLUGINS="/var/lib/grafana-plugins"
 
@@ -13,7 +13,7 @@ RUN mkdir -p "$GF_PATHS_PLUGINS" && \
 
 USER grafana
 
-#ENV GF_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/chromium-browser"
+ENV GF_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/chromium-browser"
 
 ARG GF_INSTALL_PLUGINS=""
 
